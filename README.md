@@ -1,4 +1,4 @@
-# testOnPlayframework14
+# RTprod
 Тестовое задание для Ростелекома 
 
 Для разработки использовал PlayFramework 1.4.3 (самая последняя на данный момент)
@@ -18,9 +18,6 @@ https://www.playframework.com/documentation/1.4.x/home
 Для запуска war-файла надобно: Tomcat 7.0.73, Java 8 (на Java 7 не проверял), PostgreSQL 9.3 или выше
 в данной СУБД нужно поправить файлы pg_hba.conf и postgresql.conf для работы по 127.0.0.1
 
-Название БД должно быть playdb (я так захотел), если не нравится поменять можно 
-вот здесь: распаковываем ROOT.war(это просто zip-архив), находим там  /WEB-INF/application/conf/application.conf строка № 73 db.url=jdbc:postgresql:playdb (playdb на что-то своё).
-
-После это необходимо восстановить БД из файла: dataBasePostgresql.tar
+Теперь необходимо только создать БД под названием playdb, восстанавливать базу не надо. База инициализируется из файла "data.yml", те таблицы, которые не заполняются из этого файла заполняются методом conn.createStatement() из класса Bootstrap.
 
 
